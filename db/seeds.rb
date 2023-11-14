@@ -21,7 +21,7 @@ puts "Creating Users"
 
 yamada = User.create!(
   name: 'Sakura Yamada',
-  email: 'lkyvcvc@gmail.com',
+  email: 'marcelino.hyatt@yahoo.com',
   phone_number: '8023456',
   password: '123456',
 )
@@ -30,7 +30,7 @@ puts "user1 created"
 
 tanaka = User.create!(
   name: 'Hiro Tanaka',
-  email: 'aqusix@gmail.com',
+  email: 'abby81@gmail.com',
   phone_number: '9012345',
   password: '123456'
 )
@@ -38,7 +38,7 @@ puts "user2 created"
 
 suzuki = User.create!(
   name: 'Akiho Suzuki',
-  email: 'am2qua@gmail.com',
+  email: 'hschinner@reinger.net',
   phone_number: '1203456',
   password: '123456'
 )
@@ -46,7 +46,7 @@ puts "user3 created"
 
 nagatomo = User.create!(
   name: 'Kei Nagatomo',
-  email: 'aq2572@gmail.com',
+  email: 'paula.blick@hessel.com',
   phone_number: '5045678',
   password: '123456'
 )
@@ -54,7 +54,7 @@ puts "user4 created"
 
 watanabe = User.create!(
   name: 'Akane Watanabe',
-  email: 'chrysanduke@gmail.com',
+  email: 'chantaiman@gmail.com',
   phone_number: '7056789',
   password: '123456'
 )
@@ -62,7 +62,7 @@ puts "user5 created"
 
 sato = User.create!(
   name: 'Toshiro Sato',
-  email: 'flennww@gmail.com',
+  email: 'chansiuman@gmail.com',
   phone_number: '8067890',
   password: '123456'
 )
@@ -70,7 +70,7 @@ puts "user6 created"
 
 kimura = User.create!(
   name: 'Naomi Kimura',
-  email: 'me@duke.vc',
+  email: 'naomikimura@gmail.com',
   phone_number: '9078901',
   password: '123456'
 )
@@ -78,7 +78,7 @@ puts "user7 created"
 
 nakamura = User.create!(
   name: 'Yoshito Nakamura',
-  email: 'ai.keroro.robot@gmail.com',
+  email: 'yoshitonakamura@gmail.com',
   phone_number: '1201234',
   password: '123456'
 )
@@ -86,7 +86,7 @@ puts "user8 created"
 
 okada = User.create!(
   name: 'Emi Okada',
-  email: 'vinccileungky@gmail.com',
+  email: 'emiokada@gmail.com',
   phone_number: '5090123',
   password: '123456'
 )
@@ -94,7 +94,7 @@ puts "user9 created"
 
 ishikawa = User.create!(
   name: 'Daisuke Ishikawa',
-  email: 'ttaqua@live.com',
+  email: 'daisukeishikawa@gmail.com',
   phone_number: '7023456',
   password: '123456'
 )
@@ -102,7 +102,7 @@ puts "user10 created"
 
 kozuki = User.create!(
   name: 'Rin Kozuki',
-  email: 'file@duke.vc',
+  email: 'rinkozuki@gmail.com',
   phone_number: '8034567',
   password: '123456'
 )
@@ -110,7 +110,7 @@ puts "user11 created"
 
 User.create!(
   name: 'Mariko Inoue',
-  email: 'web@duke.vc',
+  email: 'marikoinoue@gmail.com',
   phone_number: '9045678',
   password: '123456'
 )
