@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+      <h1>Create a new cup</h1>
+      <%= simple_form_for(@cup) do |f| %>
+        <div class="d-flex justify-content-between">
+          <%= f.input :name %>
+          <%= f.input :photo, as: :file %>
+        </div>
+        <%= f.input :location %>
+        <div class="d-flex justify-content-between">
+          <%= f.input :category, as: :select, collection: Cup::TYPE %>
+          <%= f.input :volume %>
+          <%= f.input :price %>
+        </div>
+        <%= f.input :description %>
+        <%= f.submit "Create a cup", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
