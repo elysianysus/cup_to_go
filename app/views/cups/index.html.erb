@@ -1,0 +1,114 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-dOWfESYvLW8vh2zAAHzMhVDrPuweR82tIW0ZMy3uj28eyFgWLU2Uwq4NCw3I8/9ZbpE+1bA1mDdNpQ6c7XyNBg==" crossorigin="anonymous" />
+<div class="navbar navbar-expand-sm navbar-light navbar">
+  <div class="container-fluid">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "https://www.pngfind.com/pngs/m/215-2152933_cup-mug-coffee-black-and-white-coffee-emoji.png" %>
+    <% end %>
+    <h1><strong>Cup To Go</strong></h1>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <%# if user_signed_in? %>
+          <li class="nav-item active">
+            <a class="btn btn-flat" href="#">
+              <i class="fa-solid fa-plus"></i> Create a cup</a>
+            <a class="btn btn-flat" href="/cups">
+              <i class="fas fa-magnifying-glass"></i> Find a Cup
+            </a>
+            <a class="btn btn-flat" href="#"> Log in </a>
+          </li>
+        <%# else %>
+          <!--li class="nav-item"-->
+            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <!--/li-->
+        <%# end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<a class="btn btn-flat m-2" href="#">Reservation date 📅 </a>
+
+<div class="cards">
+  <div class="card-product">
+    <div class="card-product-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/products/merchandise/home%20and%20office/drinkware/mario-enemies-mug-white/116548-mushroom-kingdom-mug-mario-enemies-red-1-1200x675)"></div>
+    <div class="card-product-infos">
+      <h2>Cup 1</h2>
+      <h2>Owner, Location</h2>
+      <h3>$$$<h3>
+      <p>Description for Cup 1</p>
+    </div>
+  </div>
+
+  <div class="card-product">
+    <div class="card-product-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/products/merchandise/home%20and%20office/drinkware/mario-enemies-mug-white/116548-mushroom-kingdom-mug-mario-enemies-red-1-1200x675)"></div>
+    <div class="card-product-infos">
+      <h2>Cup 2</h2>
+      <h2>Owner, Location</h2>
+      <h3>$$$<h3>
+      <p>Description for Cup 2</p>
+    </div>
+  </div>
+
+  <div class="card-product">
+    <div class="card-product-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/products/merchandise/home%20and%20office/drinkware/mario-enemies-mug-white/116548-mushroom-kingdom-mug-mario-enemies-red-1-1200x675)"></div>
+    <div class="card-product-infos">
+      <h2>Cup 3</h2>
+      <h2>Owner, Location</h2>
+      <h3>$$$<h3>
+      <p>Description for Cup 3</p>
+    </div>
+  </div>
+
+  <div class="card-product">
+    <div class="card-product-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/products/merchandise/home%20and%20office/drinkware/mario-enemies-mug-white/116548-mushroom-kingdom-mug-mario-enemies-red-1-1200x675)"></div>
+    <div class="card-product-infos">
+      <h2>Cup 4</h2>
+      <h2>Owner, Location</h2>
+      <h3>$$$<h3>
+      <p>Description for Cup 4</p>
+    </div>
+  </div>
+
+  <div class="card-product">
+    <div class="card-product-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/products/merchandise/home%20and%20office/drinkware/mario-enemies-mug-white/116548-mushroom-kingdom-mug-mario-enemies-red-1-1200x675)"></div>
+    <div class="card-product-infos">
+      <h2>Cup 5</h2>
+      <h2>Owner, Location</h2>
+      <h3>$$$<h3>
+      <p>Description for Cup 5</p>
+    </div>
+  </div>
+
+  <div class="card-product">
+    <div class="card-product-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/products/merchandise/home%20and%20office/drinkware/mario-enemies-mug-white/116548-mushroom-kingdom-mug-mario-enemies-red-1-1200x675)"></div>
+    <div class="card-product-infos">
+      <h2>Cup 6</h2>
+      <h2>Owner, Location</h2>
+      <h3>$$$<h3>
+      <p>Description for Cup 6</p>
+    </div>
+  </div>
+
+  <div class="card-product">
+    <div class="card-product-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/products/merchandise/home%20and%20office/drinkware/mario-enemies-mug-white/116548-mushroom-kingdom-mug-mario-enemies-red-1-1200x675)"></div>
+    <div class="card-product-infos">
+      <h2>Cup 7</h2>
+      <h2>Owner, Location</h2>
+      <h3>$$$<h3>
+      <p>Description for Cup 7</p>
+    </div>
+  </div>
+
+  <div class="card-product">
+    <div class="card-product-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/products/merchandise/home%20and%20office/drinkware/mario-enemies-mug-white/116548-mushroom-kingdom-mug-mario-enemies-red-1-1200x675)"></div>
+    <div class="card-product-infos">
+      <h2>Cup 8</h2>
+      <h2>Owner, Location</h2>
+      <h3>$$$<h3>
+      <p>Description for Cup 8</p>
+    </div>
+  </div>
+</div>
