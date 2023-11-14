@@ -1,4 +1,9 @@
 class CupsController < ApplicationController
+  def index
+    @cups = Cup.all
+    @cup = Cup.new
+  end
+
   def new
     @cup = Cup.new
   end
