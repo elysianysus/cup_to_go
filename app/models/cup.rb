@@ -2,7 +2,7 @@ class Cup < ApplicationRecord
 
   belongs_to :user
   has_many  :bookings
-
+  
   CATEGORY = ["bottle", "cup", "thermos", "mug"]
 
   validates :name, presence: true, length: { minimum: 6 }
