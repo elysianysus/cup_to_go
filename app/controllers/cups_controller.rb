@@ -1,7 +1,12 @@
 class CupsController < ApplicationController
   def index
     @cups = Cup.all
-    @cup = Cup.new
+  end
+
+  def show
+    @cup = Cup.find(params[:id])
+    @Booking = Booking.new
+
   end
 
   def new
