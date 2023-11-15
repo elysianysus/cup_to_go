@@ -5,31 +5,22 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
     # Assuming each user has_many :bookings
   end
-
-  def show
-    #will show one bookings
-  end
-
-  def new
-    @booking = Booking.new
-    #tbc
-  end
-
+  
   def create
-    @booking = Booking.new
-    #tbc
+    @cup = Cup.find(params[:cup_id])
+    @booking = Booking.new(booking_params)
+    @booking.cup = @cup
+    @booking.user = current_user
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
-  def edit
-    #tbc
-  end
+  private
 
-  def update
-    #tbc
+  def booking_params
+    params.require(:booking).permit(:start_date, :return_date)
   end
-
-  def destroy
-    #tbc
-  end
-
 end
