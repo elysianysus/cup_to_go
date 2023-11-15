@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="margin-bottom: 30px">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="<%= "margin-bottom: 30px" unless params[:controller] == "pages" %>">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://www.pngfind.com/pngs/m/215-2152933_cup-mug-coffee-black-and-white-coffee-emoji.png" %>
