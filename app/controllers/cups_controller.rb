@@ -1,4 +1,7 @@
 class CupsController < ApplicationController
+  # Skip authentication for index and show actions, please add show, :show later
+  skip_before_action :authenticate_user!, only: [:index]
+
   def index
     @cups = Cup.all
     @cup = Cup.new
