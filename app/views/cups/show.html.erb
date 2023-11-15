@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="card-product">
+    <div class="card-product-content">
+      <div class="card-product-selected-image" style="background-image: url('<%= @cup.photo.url %>'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+      <div class="card-product-info">
+        <h1><%= @cup.name %></h1>
+        <h2><%= @cup.user.name %></h2>
+        <h2><%= @cup.location %></h2>
+        <h2><%= @cup.volume %> ml</h2>
+        <h3>¥<%= @cup.price %></h3>
+        <p><%= @cup.description %></p>
+      </div>
+    </div>
+  </div>
+</div>
