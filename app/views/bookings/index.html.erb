@@ -1,24 +1,24 @@
-<% @bookings.each do |booking| %>
-
-
-<div class="card mb-3" style="max-width: 700px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <%= booking.cup.photo.attached? ? cl_image_tag(booking.cup.photo.key, class: "img-thumbnail", width: "300") : "No image available" %>
-    </div>
-    <div class="col-md-6">
-      <div class="card-body align-middle">
-        <h5 class="card-title align-middle">
-        <%= booking.cup.name %>
-        </h5>
-        <p class="card-text align-middle">Cup from <%= booking.cup.user.name %>
-        <br>
-        <%= booking.start_date %> - <%= booking.return_date %></p>
+<div class= "container justify-content-center">
+  <% @bookings.each do |booking| %>
+    <div class="card mb-3 ">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <%= booking.cup.photo.attached? ? cl_image_tag(booking.cup.photo.key, class: "img-thumbnail", width: "300") : "No image available" %>
+        </div>
+        <div class="col-md-6">
+          <div class="card-body align-middle">
+            <h5 class="card-title align-middle">
+              <%= booking.cup.name %>
+            </h5>
+            <p class="card-text align-middle">Cup from <%= booking.cup.user.name %>
+              <br>
+              <%= booking.start_date %> - <%= booking.return_date %></p>
+          </div>
+        </div>
+        <div class="col-md-2 align-middle">
+          <div class="card-text align-middle" style="font-size: 28px;"><%= booking.status %></div>
+        </div>
       </div>
     </div>
-    <div class="col-md-2 align-middle">
-      <div class="card-text align-middle"><%= booking.status %></div>
-    </div>
-  </div>
+  <% end %>
 </div>
-<% end %>

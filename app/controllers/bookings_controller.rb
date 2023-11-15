@@ -5,7 +5,12 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
     # Assuming each user has_many :bookings
   end
-  
+
+  def new
+    @cup = Cup.find(params[:cup_id])
+    @booking = Booking.new
+  end
+
   def create
     @cup = Cup.find(params[:cup_id])
     @booking = Booking.new(booking_params)
