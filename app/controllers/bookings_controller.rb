@@ -1,4 +1,11 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!
+
+  def index
+    @bookings = current_user.bookings
+    # Assuming each user has_many :bookings
+  end
+  
   def create
     @cup = Cup.find(params[:cup_id])
     @booking = Booking.new(booking_params)
