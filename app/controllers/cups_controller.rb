@@ -1,6 +1,6 @@
 class CupsController < ApplicationController
   # Skip authentication for index and show actions, please add show, :show later
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!,  only: [:index, :show]
 
   def index
     @cups = Cup.all
@@ -8,7 +8,7 @@ class CupsController < ApplicationController
 
   def show
     @cup = Cup.find(params[:id])
-    @Booking = Booking.new
+    @booking = Booking.new
 
   end
 
