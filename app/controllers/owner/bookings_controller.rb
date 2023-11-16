@@ -1,7 +1,9 @@
 class Owner::BookingsController < ApplicationController
+  before_action :authenticate_user!
 
-
-
+  def index
+    @bookings = Booking.where(cup_id: current_user.cups.pluck(:id))
+  end
 
   def update
     @booking = Booking.find(params[:id])
@@ -17,4 +19,5 @@ class Owner::BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:status, :start_date, :return_date)
   end
+
 end
