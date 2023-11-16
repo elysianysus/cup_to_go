@@ -3,16 +3,19 @@
     <div class="card mb-3 ">
       <div class="row g-0">
         <div class="col-md-4">
-          <%= booking.cup.photo.attached? ? cl_image_tag(booking.cup.photo.key, class: "img-thumbnail", width: "300") : "No image available" %>
+          <%= booking.cup.photo.attached? ? cl_image_tag(booking.cup.photo.key, class: "img-thumbnail", width: "300", height: "300", crop: :fill) : "No image available" %>
         </div>
         <div class="col-md-6">
           <div class="card-body align-middle">
-            <h5 class="card-title align-middle">
+            <h4 class="card-title align-middle" style="font-weight: bold">
               <%= booking.cup.name %>
-            </h5>
-            <p class="card-text align-middle">Cup from <%= booking.cup.user.name %>
+            </h4>
+            Cup from
+            <i style="font-style: italic"><%= booking.cup.user.name %></i>
+            <p>
+              <%= booking.start_date %> to <%= booking.return_date %> &#40;<%= sums = (booking.return_date - booking.start_date).to_i %> <%= sums > 1? "days" : "day"%>&#41;
               <br>
-              <%= booking.start_date %> - <%= booking.return_date %></p>
+              ¥ <%= booking.total_price %></p>
           </div>
         </div>
         <div class="col-md-2 align-middle">
