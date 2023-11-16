@@ -1,0 +1,17 @@
+<h1>Your Bookings</h1>
+<div class="bookings">
+  <% @bookings.each do |booking| %>
+    <div class="booking">
+      <% cup = booking.cup %>
+      <div class="cup-image">
+        <%= image_tag cup.photo.url, class: 'cup-thumbnail' if cup.photo.attached? %>
+      </div>
+      <div class="booking-details">
+        <p><strong>Cup:</strong> <%= cup.name %></p>
+        <p><strong>Renter:</strong> <%= booking.user.name %></p>
+        <p><strong>Start Date:</strong> <%= booking.start_date %></p>
+        <p><strong>Return Date:</strong> <%= booking.return_date %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
