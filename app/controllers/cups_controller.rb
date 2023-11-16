@@ -9,7 +9,6 @@ class CupsController < ApplicationController
   def show
     @cup = Cup.find(params[:id])
     @booking = Booking.new
-
   end
 
   def new
@@ -25,6 +24,8 @@ class CupsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+
 
   private
 
