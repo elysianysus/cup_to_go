@@ -4,4 +4,8 @@ class Booking < ApplicationRecord
 
   validates :start_date, presence: true
   validates :return_date, presence: true
+
+  def pending?
+    status == "pending"
+  end
 end
