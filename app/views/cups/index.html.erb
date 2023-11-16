@@ -1,18 +1,2 @@
 <a class="btn btn-flat m-2" href="#">Reservation date 📅 </a>
-
-<div class="cards">
-  <% @cups.each do |cup| %>
-   <%= link_to cup_path(cup),class: "no-decoration" do %>
-      <div class="card-product">
-        <div class="card-product-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cup.photo.url %>);"></div>
-        <div class="card-product-infos">
-          <h2><%= cup.name %></h2>
-          <h2><%= cup.category %></h2>
-          <h2><%= cup.user.name %></h2>
-          <h2><%= cup.location %></h2>
-          <h3>¥<%= cup.price %></h3>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
+<%= render "shared/cupcard" %>
