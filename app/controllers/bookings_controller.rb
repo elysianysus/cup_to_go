@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.cup = @cup
     @booking.user = current_user
+    @booking.total_price = (@booking.return_date - @booking.start_date) * @cup.price
     if @booking.save
       redirect_to bookings_path
     else
