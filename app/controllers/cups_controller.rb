@@ -4,6 +4,14 @@ class CupsController < ApplicationController
 
   def index
     @cups = Cup.all
+    @markers = @cups.geocoded.map do |cup|
+      {
+        lat: cup.latitude,
+        lng: cup.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {cup: cup}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
   end
 
   def show
@@ -24,8 +32,6 @@ class CupsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
-
 
   private
 
