@@ -7,19 +7,26 @@
         </div>
         <div class="col-md-6">
           <div class="card-body align-middle">
-            <h4 class="card-title align-middle" style="font-weight: bold">
+            <h2 class="card-title align-middle" style="font-weight: bold">
               <%= booking.cup.name %>
-            </h4>
-            Cup from
-            <i style="font-style: italic"><%= booking.cup.user.name %></i>
-            <p>
-              <%= booking.start_date %> to <%= booking.return_date %> &#40;<%= sums = (booking.return_date - booking.start_date).to_i %> <%= sums > 1? "days" : "day"%>&#41;
-              <br>
-              ¥ <%= booking.total_price %></p>
+            </h2>
+            <h4>Cup from
+              <i style="font-style: italic"><%= booking.cup.user.name %></i></h4>
+            <h4>
+              <%= booking.start_date %> to <%= booking.return_date %> &#40;<%= sums = (booking.return_date - booking.start_date).to_i %> <%= sums > 1? "days" : "day"%>&#41; <br>
+              ¥
+              <% price = booking.total_price || 0 %>
+              <% if price > 1000 %>
+                <% price_formatted = price.to_s.insert(-4, ',') %>
+              <% end %>
+              <%= price_formatted || price %></h4>
           </div>
         </div>
-        <div class="col-md-2 align-middle">
-          <div class="card-text align-middle" style="font-size: 28px;"><%= booking.status %></div>
+        <div class="col-md-2 align-items-center">
+          <div class="card-text d-flex align-items-center" style="font-size: 28px; display: flex; "><br>
+            <br>
+            <br>
+            <%= booking.status %></div>
         </div>
       </div>
     </div>

@@ -1,17 +1,16 @@
 <div class="container" style="padding: 25px">
   <div class="row justify-content-center">
     <div data-controller="calculation"class="col-6 col-sm-10 col-md-8 col-lg-6">
-      <h2>Create a booking:</h2>
+      <h2><strong>Create a booking:</strong></h2>
+      <p></p>
       <%= simple_form_for [@cup, @booking], data: { calculation_target: "form"}  do |f| %>
-        <%= f.input :start_date, html5:true, input_html: { data: { calculation_target: "startdate",  action: "change->calculation#check"}}, min: Date.today %>
-        <%= f.input :return_date, html5: true, input_html: { data: { calculation_target: "returndate", action: "change->calculation#check"}}, min: Date.today %>
-        <div class="row">Duration:
-          <p data-calculation-target="duration"> </p>
-        </div>
-        <div class="row">Total:
-          <p data-calculation-target="price" data-amount="<%= @cup.price%>"></p>
-        </div>
-        <%= f.submit "Book", class: "btn btn-flat" %>
+        <%= f.input :start_date, html5:true, input_html: { data: { calculation_target: "startdate",  action: "change->calculation#check"}, min: Date.today}  %>
+        <%= f.input :return_date, html5: true, input_html: { data: { calculation_target: "returndate", action: "change->calculation#check"}, min: Date.tomorrow} %>
+        <label>Duration</label>
+        <p data-calculation-target="duration" style="text-align: right;"> </p>
+        <label>Total</label>
+        <p data-calculation-target="price" data-amount="<%= @cup.price%>" style="text-align: right;"></p>
+        <%= f.submit "Book", class: "btn btn-flat d-flex justify-content-center" %>
       <% end %>
     </div>
   </div>

@@ -121,7 +121,7 @@ puts "user12 created"
 cup1 = Cup.create!(
   name: "Tokyo Skyline Bottle",
   category: "bottle",
-  location: "Starbucks Shibuya Crossing, 2-6-17 Dogenzaka, Shibuya, Tokyo 150-0043",
+  location: "1-291-8 Sarugakucho, Chiyoda ku, Tokyo to",
   volume: 500,
   description: "A sleek bottle featuring a silhouette of Tokyo's skyline.",
   price: 200,
@@ -135,7 +135,7 @@ puts "cup 1 photo uploaded"
 cup2 = Cup.create!(
   name: "Cherry Blossom Cup",
   category: "cup",
-  location: "Starbucks Shinjuku, 3-17-7 Shinjuku, Shinjuku-ku, Tokyo 160-0022",
+  location: "1-291-4 Sarugakucho, Chiyoda ku, Tokyo to",
   volume: 350,
   description: "A vibrant cup adorned with cherry blossoms, perfect for spring.",
   price: 150,
@@ -151,7 +151,7 @@ puts "cup 2 photo uploaded"
 cup3 = Cup.create!(
   name: "Mount Fuji Thermos",
   category: "thermos",
-  location: "Starbucks Harajuku, 1-14-30 Jingumae, Shibuya, Tokyo 150-0001",
+  location: "1-14-30 Jingumae, Shibuya, Tokyo 150-0001",
   volume: 600,
   description: "Keep your drinks hot with this Mount Fuji-inspired thermos.",
   price: 300,
@@ -166,7 +166,7 @@ puts "cup 3 photo uploaded"
 cup4 = Cup.create!(
   name: "Imperial Palace Mug",
   category: "mug",
-  location: "Starbucks Chiyoda, 1-1 Chiyoda, Chiyoda-ku, Tokyo 100-0001",
+  location: "1-1 Chiyoda, Chiyoda-ku, Tokyo 100-0001",
   volume: 400,
   description: "A classic mug featuring the beautiful Imperial Palace.",
   price: 180,
@@ -181,7 +181,7 @@ puts "cup 4 photo uploaded"
 cup5 = Cup.create!(
   name: "Sumida River Bottle",
   category: "bottle",
-  location: "Starbucks Kinshicho, 4-27-14 Kotobashi, Sumida-ku, Tokyo 130-0022",
+  location: "4-27-14 Kotobashi, Sumida-ku, Tokyo 130-0022",
   volume: 450,
   description: "A durable bottle with a design inspired by the Sumida River.",
   price: 220,
@@ -196,7 +196,7 @@ puts "cup 5 photo uploaded"
 cup6 = Cup.create!(
   name: "Asakusa Sensoji Cup",
   category: "cup",
-  location: "Starbucks Asakusa, 2-3-1 Asakusa, Taito-ku, Tokyo 111-0032",
+  location: "2-3-1 Asakusa, Taito-ku, Tokyo 111-0032",
   volume: 300,
   description: "A traditional cup featuring Asakusa's Sensoji Temple.",
   price: 160,
@@ -211,7 +211,7 @@ puts "cup 6 photo uploaded"
 cup7 = Cup.create!(
   name: "Akihabara Electric Thermos",
   category: "thermos",
-  location: "Starbucks Akihabara, 1-1 Kanda Hanaokacho, Chiyoda-ku, Tokyo 101-0028",
+  location: "1-1 Kanda Hanaokacho, Chiyoda-ku, Tokyo 101-0028",
   volume: 550,
   description: "A thermos with a high-tech design, homage to Akihabara.",
   price: 210,
@@ -226,7 +226,7 @@ puts "cup 7 photo uploaded"
 cup8 = Cup.create!(
   name: "Tokyo Tower Mug",
   category: "mug",
-  location: "Starbucks Minato, 4-1-18 Shiba-Koen, Minato-ku, Tokyo 105-0011",
+  location: "4-1-18 Shiba-Koen, Minato-ku, Tokyo 105-0011",
   volume: 400,
   description: "A beautifully crafted mug featuring Tokyo Tower.",
   price: 190,

@@ -5,6 +5,15 @@ class CupsController < ApplicationController
   def index
     @cups = Cup.all
     @cups = @cups.available_between(params[:start_date], params[:end_date]) if params[:start_date].present? && params[:end_date].present?
+    
+    @markers = @cups.geocoded.map do |cup|
+      {
+        lat: cup.latitude,
+        lng: cup.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {cup: cup}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
   end
 
   def show
@@ -25,8 +34,6 @@ class CupsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
-
 
   private
 
