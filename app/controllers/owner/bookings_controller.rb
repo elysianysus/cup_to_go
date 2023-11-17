@@ -10,6 +10,7 @@ class Owner::BookingsController < ApplicationController
     if @booking.update(booking_params)
       redirect_to owner_bookings_path
     else
+      @bookings = Booking.where(cup_id: current_user.cups.pluck(:id))
       render "owner/bookings/index", status: :unprocessable_entity
     end
   end
