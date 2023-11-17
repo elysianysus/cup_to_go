@@ -8,8 +8,20 @@
 
     <%= submit_tag 'Filter', class: 'btn btn-flat m-2' %>
   <% end %>
-
-  <%= render "shared/cupcard" %>
+                        
+  <div class="row">
+    <div class="col-8">
+      <%= render "shared/cupcard" %>
+    </div>
+    <div class="col-4">
+      <div id='map'
+           style='width: 100%; height: 100vh;'
+           data-controller="map"
+           data-map-markers-value="<%= @markers.to_json %>"
+           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -19,5 +31,14 @@
 
     new Pikaday({ field: startDateInput });
     new Pikaday({ field: endDateInput });
+</script>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoibXNhbTQiLCJhIjoiY2xwMjAzaWVlMGpxMzJqcHFiNzBsNzltbSJ9.kWoXwScYBGZLKCzEgaeR_g';
+  const map = new mapboxgl.Map({
+      container: 'map', // container ID
+      style: 'mapbox://styles/mapbox/streets-v12', // style URL
+      center: [139.8, 35.7], // starting position [lng, lat]
+      zoom: 9, // starting zoom
   });
 </script>

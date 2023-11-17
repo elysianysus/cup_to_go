@@ -2,7 +2,7 @@
   <% @cups.each do |cup| %>
     <%= link_to cup_path(cup),class: "no-decoration" do %>
       <div class="card-product">
-        <div class="card-product-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cup.photo.url %>); width: 300px;height: 300px;"></div>
+        <div class="card-product-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cup.photo.url %>); height: 300px; crop: :fill;"></div>
         <div class="row card-product-infos">
           <h2 id="name"><%= cup.name %></h2>
           <h2 id="location"><em><%= cup.location %></em></h2>

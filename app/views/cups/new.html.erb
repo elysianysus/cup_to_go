@@ -1,21 +1,24 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-sm-10 col-md-8 col-lg-6">
-      <h1>Create a new cup ☕ </h1>
+      <h1>List a new cup ☕ </h1>
+      <br>
       <%= simple_form_for(@cup) do |f| %>
         <div class="d-flex justify-content-between">
-          <%= f.input :name %>
-          <%= f.input :photo, as: :file %>
+          <div class="form-group">
+            <div class="input-group">
+              <%= f.input :name %>
+              <%= f.input :photo, as: :file %>
+            </div>
+            <%= f.input :location %>
+            <div class="d-flex justify-content-between">
+              <%= f.input :category, as: :select, collection: Cup::CATEGORY %>
+              <%= f.input :volume, label: "Volume (mL)" %>
+              <%= f.input :price, label: "Price (¥)" %>
+            </div>
+            <%= f.input :description  %>
+            <%= f.submit "Create", class: "btn btn tertiary", style: "color: white" %>
+          <% end %>
         </div>
-        <%= f.input :location %>
-        <div class="d-flex justify-content-between">
-          <%= f.input :category, as: :select, collection: Cup::CATEGORY %>
-          <%= f.input :volume, label: "Volume (mL)" %>
-          <%= f.input :price, label: "Price (¥)" %>
-        </div>
-        <%= f.input :description %>
-        <%= f.submit "Create", class: "btn btn tertiary", style: "color: white" %>
-      <% end %>
+      </div>
     </div>
-  </div>
-</div>
