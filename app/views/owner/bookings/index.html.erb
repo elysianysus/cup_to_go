@@ -9,17 +9,23 @@
           <div class="col-md-4">
             <% cup = booking.cup %>
             <div class="cup-image">
-              <%= image_tag cup.photo.url, class: 'img-thumbnail' if cup.photo.attached? %>
+              <%= cl_image_tag(booking.cup.photo.key, class: "img-thumbnail", width: "300", height: "300", crop: :fill) if cup.photo.attached? %>
             </div>
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">
+              <h2 class="card-title">
                 <%= cup.name %>
-              </h5>
-              <p class="card-text">User: <strong><%= cup.user.name %></strong> would like to book this cup.
+              </h2>
+              <h4 class="card-text"><strong><%= cup.user.name %></strong> would like to book this cup.
                 <br>
-                <%= booking.start_date %> - <%= booking.return_date %></p>
+                <%= booking.start_date %> to <%= booking.return_date %> &#40;<%= sums = (booking.return_date - booking.start_date).to_i %> <%= sums > 1? "days" : "day"%>&#41; <br>
+                ¥
+                <% price = booking.total_price || 0 %>
+                <% if price > 1000 %>
+                  <% price_formatted = price.to_s.insert(-4, ',') %>
+                <% end %>
+                <%= price_formatted || price %></h4>
               <div class="card-text" style="font-size: 28px; margin-bottom: 10px; color: <%= booking.status == 'accepted' ? 'green' : (booking.status == 'rejected' ? 'red' : '') %>;">
                 <%= booking.status %>
               </div>
@@ -28,11 +34,11 @@
               <div class="d-flex flex-column align-items-end">
                 <%= simple_form_for booking, url: owner_booking_path(booking), method: :patch do |f| %>
                   <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-                  <%= f.submit 'Accept', class: 'btn btn-info btn-lg mb-2' %>
+                  <%= f.submit 'Accept', class: 'btn btn-info btn-lg mb-2 rounded-pill font-weight-bold' %>
                 <% end %>
                 <%= simple_form_for booking, url: owner_booking_path(booking), method: :patch do |f| %>
                   <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-                  <%= f.submit 'Reject', class: 'btn btn-light btn-lg' %>
+                  <%= f.submit 'Reject ', class: 'btn btn-light btn-lg mb-2 bg-secondary rounded-pill text-white font-weight-bold' %>
                 <% end %>
               </div>
             <% end %>

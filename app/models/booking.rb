@@ -5,7 +5,7 @@ class Booking < ApplicationRecord
   validates :start_date, presence: true
   validates :return_date, presence: true
 
-  validate :start_date_in_future, :dates_has_positive_length
+  ## validate :start_date_in_future, :dates_has_positive_length
 
   def pending?
     status == "pending"
