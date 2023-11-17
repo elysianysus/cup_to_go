@@ -1,0 +1,6 @@
+<%= link_to cup_path(cup),class: "no-decoration" do %>
+  <div class="card-product align-items-center justify-content-center py-2 info-window">
+    <div class="card-product-image" style="background-image: url(<%= cup.photo.url %>); width: 150px; height: 150px;"></div>
+    <h2 id="name"><%= cup.name %></h2>
+  </div>
+<% end %>
