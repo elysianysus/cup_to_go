@@ -13,9 +13,12 @@
             Cup from
             <i style="font-style: italic"><%= booking.cup.user.name %></i>
             <p>
-              <%= booking.start_date %> to <%= booking.return_date %> &#40;<%= sums = (booking.return_date - booking.start_date).to_i %> <%= sums > 1? "days" : "day"%>&#41;
-              <br>
-              ¥ <%= booking.total_price %></p>
+              ¥
+              <% price = booking.total_price || 0 %>
+              <% if price > 1000 %>
+                <% price_formatted = price.to_s.insert(-4, ',') %>
+              <% end %>
+              <%= price_formatted || price %></p>
           </div>
         </div>
         <div class="col-md-2 align-middle">
